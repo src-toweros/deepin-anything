@@ -14,7 +14,6 @@ License:       GPLv3
 URL:           https://uos-packages.deepin.com/uos/pool/main/d/deepin-anything/
 Source0:       %{name}-%{version}.orig.tar.xz
 
-
 BuildRequires: qt5-qtbase-devel
 BuildRequires: dtkcore-devel
 BuildRequires: udisks2-qt5
@@ -51,7 +50,6 @@ export PATH=$PATH:%{_libdir}/qt5/bin
 %make_install
 mkdir -p %{?buildroot}/usr/lib/modules-load.d/
 mkdir -p %{buildroot}/usr/lib/systemd/system/
-#mv %{?buildroot}%{_libdir}/modules-load.d/anything.conf %{?buildroot}/usr/lib/modules-load.d/
 install -Dm644 server/tool/deepin-anything-tool.service %{buildroot}/usr/lib/systemd/system/
 install -Dm644 server/monitor/deepin-anything-monitor.service %{buildroot}/usr/lib/systemd/system/
 
@@ -83,5 +81,5 @@ install -Dm644 server/monitor/deepin-anything-monitor.service %{buildroot}/usr/l
 
 
 %changelog
-* Wed Feb 07 2018 TagBuilder <tagbuilder@linuxdeepin.com> - 5.0.1-1
-- Project init.
+* Thu Jul 30 2020 openEuler Buildteam <buildteam@openeuler.org> - 5.0.1-1
+- Package init
