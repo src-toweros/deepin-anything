@@ -8,7 +8,7 @@
 
 Name:          deepin-anything
 Version:       5.0.1
-Release:       1
+Release:       2
 Summary:       Something like everything, but nothing is really like anything...
 License:       GPLv3
 URL:           https://uos-packages.deepin.com/uos/pool/main/d/deepin-anything/
@@ -76,10 +76,13 @@ install -Dm644 server/monitor/deepin-anything-monitor.service %{buildroot}/usr/l
 %{_datadir}/dbus-1/interfaces/com.deepin.anything.xml
 %{_datadir}/dbus-1/system-services/com.deepin.anything.service
 %{_sysconfdir}/dbus-1/system.d/com.deepin.anything.conf
-/usr/lib/systemd/system/deepin-anything-monitor.service
+%exclude /usr/lib/systemd/system/deepin-anything-monitor.service
 /usr/lib/systemd/system/deepin-anything-tool.service
 
 
 %changelog
+* Tue Jun 08 2021 weidong <weidong@uniontech.com> - 5.0.1-2
+- openEuler kernel don't support vfs,so delete deepin-anything-monitor.service
+
 * Thu Jul 30 2020 openEuler Buildteam <buildteam@openeuler.org> - 5.0.1-1
 - Package init
